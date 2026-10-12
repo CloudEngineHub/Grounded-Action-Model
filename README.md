@@ -106,7 +106,7 @@ Linux x86_64, Python 3.11, CUDA 12.6 / 12.8 / 13.0 (torch 2.13). Measured on one
 
 The released checkpoints were trained on 8 GPUs (LIBERO-PRO, global batch 512) and 4 GPUs (RoboTwin, global
 batch 192). On a single 24 GB card use `--batch-size 16` and raise `--grad-accum` to keep the global batch
-(12 for RoboTwin, 8 for LIBERO-PRO at batch 64); a smaller global batch trains too, but is not the released recipe.
+(12 for RoboTwin, 8 for LIBERO-PRO at batch 64).
 
 ## 🔧 Installation
 
@@ -213,9 +213,8 @@ python -m GAM.train --config configs/robotwin/shake_bottle.yaml --e2e
 
 Multi-GPU: `torchrun --nproc_per_node 4 -m GAM.train --config ...` (`train.batch_size` is per GPU). The yamls hold
 the exact settings of the released checkpoints; on fewer GPUs raise `train.grad_accum` (or `--grad-accum`) to keep
-the global batch, otherwise the step count and schedule no longer correspond. Precomputing is fast to train on but
-stores roughly 0.3-1 GB per 1000 frames and must be rebuilt when perception settings change;
-end-to-end stores nothing and costs one detector forward per sample.
+the global batch. Precomputing stores roughly 0.3-1 GB per 1000 frames; end-to-end stores nothing and costs one detector
+forward per sample.
 
 ## 🎯 Evaluation
 
@@ -368,7 +367,7 @@ object vocabulary when you have no labels yet.)
 ## 📜 License
 
 GAM's own code is released under the MIT License (see [LICENSE](LICENSE)). The vendored perception stack in
-`third_party/` is not ours and keeps its own licenses and copyright:
+`third_party/` keeps its upstream licenses and copyright:
 
 | package | upstream | license |
 |---|---|---|
