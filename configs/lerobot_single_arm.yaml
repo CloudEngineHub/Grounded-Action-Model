@@ -25,7 +25,9 @@ data:
   depth_unit: m
   state_key: observation.state                    # [panda_joint1..7, gripper], the FK for pcd_ref: ee reads the first 7
   action_key: action                              # absolute joint targets, same layout
-  camera_intrinsics: [[600.0, 0.0, 320.0], [0.0, 600.0, 240.0], [0.0, 0.0, 1.0]]   # REPLACE with your camera's K at the stored resolution (these placeholders run but give wrong geometry)
+  # CALIBRATION REQUIRED: LeRobot datasets carry none. K and the base->camera extrinsics drive the 3D boxes, the point clouds and the
+  # URDF robot silhouette; with these placeholders everything runs but is geometrically wrong. Check with GAM.tools.check_calibration.
+  camera_intrinsics: [[600.0, 0.0, 320.0], [0.0, 600.0, 240.0], [0.0, 0.0, 1.0]]   # REPLACE: your camera's K at the stored resolution
   camera_extrinsics: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0]]                    # REPLACE: 3x4 robot-base -> camera (OpenCV); identity = camera at the base origin
   extrinsic_is_cam2base: false                    # true if camera_extrinsics is the 4x4 camera pose in the base frame
   slots: auto                                     # object names from the task string (span head); or list them: [cube, bowl]

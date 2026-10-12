@@ -284,6 +284,13 @@ python -m GAM.precompute   --config my_task.yaml      # feature cache   (skip wi
 python -m GAM.train        --config my_task.yaml      # or: --e2e
 ```
 
+> **Calibration is required.** LeRobot datasets store no camera calibration. GAM projects 3D boxes and point clouds and
+> renders the robot's URDF silhouette with your camera intrinsics (`data.camera_intrinsics`) and the base-to-camera
+> extrinsics (`data.camera_extrinsics`); with the placeholder values in the templates the pipeline runs, but the geometry
+> and the robot mask are wrong. Measure K (camera factory values or a checkerboard), calibrate the camera pose relative to
+> the robot base (hand-eye calibration), give the robot URDF, and confirm them with
+> `python -m GAM.tools.check_calibration` before training.
+
 What to fill in the copied yaml (everything else can stay):
 
 | field | what to put |
@@ -291,9 +298,9 @@ What to fill in the copied yaml (everything else can stay):
 | `data.repo_id` / `data.root` | Hub id, or a local dataset folder |
 | `data.camera` | the RGB feature of one fixed camera (`inspect_dataset.py` lists them) |
 | `data.state_key` / `data.action_key` | joint state and **absolute joint targets** in the template's layout (gripper last) |
-| `data.camera_intrinsics` / `camera_extrinsics` | K at the stored resolution; base->camera 3x4 (or the 4x4 camera pose with `extrinsic_is_cam2base: true`) |
+| `data.camera_intrinsics` / `camera_extrinsics` | **required**: K at the stored resolution; base->camera 3x4 from hand-eye calibration (or the 4x4 camera pose with `extrinsic_is_cam2base: true`) |
 | `data.n_slots` | how many objects a task involves (`slots: auto` names them from the task string) |
-| `perception.robot` | the robot URDF + joint names for the silhouette mask (optional, recommended) |
+| `perception.robot` | the robot URDF + joint names: the silhouette mask the policy was trained with is projected from it (needs the calibration above) |
 | `train.out_dir`, `train.max_steps` | where the checkpoint goes; the released RoboTwin experts used 300 epochs over 50 demonstrations at global batch 192, capped at 12k steps |
 
 The task string is the only annotation: `GAM.tools.track` turns it into object phrases (span head), detects them on
