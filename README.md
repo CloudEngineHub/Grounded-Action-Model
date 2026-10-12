@@ -238,12 +238,6 @@ python benchmarks/robotwin/eval.py --config configs/robotwin/shake_bottle.yaml -
 python benchmarks/robotwin/eval.py --config configs/robotwin/shake_bottle.yaml --sim-python ~/envs/robotwin/bin/python   # RoboTwin in its own env
 ```
 
-`eval.py` installs the GAM policy client, the `gam_clean` / `gam_randomized` task configs and a small evaluation driver
-(`script/eval_policy_gam.py`: the official `eval_policy.py` with the episode count and the output folder made
-configurable) into the RoboTwin checkout, then runs the official evaluation loop; results and videos land under
-`eval.out_dir/<setting>/`. `--overlay` adds the head camera with the 3D boxes the policy saw (LIBERO-PRO videos carry
-the boxes by default).
-
 ## 🤖 Your Own Dataset
 
 GAM trains from your own demonstrations with no manual labelling. Two general weights do the grounding, both from
