@@ -32,8 +32,7 @@ https://github.com/user-attachments/assets/78dd3f06-45af-4ca0-a8b6-9a7492162b56
 GAM makes grounding explicit. Language or a 2D point first **selects the task objects**; a frozen
 promptable 3D detector ([WildDet3D](https://github.com/allenai/WildDet3D), built on SAM 3) then supplies each object's **image features, 3D box, size,
 orientation and point cloud**; and a flow-matching transformer predicts
-action chunks from those grounded observations, the robot's own silhouette and its proprioception. With `lang_mode: none` (the released checkpoints) the policy
-never sees a sentence and never sees the whole image, only the objects it was pointed at and itself.
+action chunks from those grounded observations, the robot's own silhouette and its proprioception.
 
 ### Key Features
 
