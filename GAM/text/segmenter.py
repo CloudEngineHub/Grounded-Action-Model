@@ -113,6 +113,10 @@ class T5ObjectSegmenter(nn.Module):
             c0, c1 = int(off0[i0][0]), int(off0[i1][1])
             while c0 < c1 and instruction[c0].isspace():   # sentencepiece offsets include the leading space
                 c0 += 1
+            while c0 > 0 and (instruction[c0 - 1].isalnum() or instruction[c0 - 1] == "-"):   # snap to word boundaries:
+                c0 -= 1                                                                      # a span never cuts a word
+            while c1 < len(instruction) and (instruction[c1].isalnum() or instruction[c1] == "-"):
+                c1 += 1
             out.append({"text": instruction[c0:c1], "span": (c0, c1),
                         "emb": h[0, i0:i1 + 1].mean(0).float().cpu().numpy()})
         return out
