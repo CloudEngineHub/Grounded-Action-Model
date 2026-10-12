@@ -20,6 +20,7 @@ while [ $# -gt 0 ]; do
   esac
 done
 
+python -m pip --version > /dev/null 2>&1 || python -m ensurepip --upgrade        # a bare conda env may come without pip
 echo "== torch"
 python -m pip install "torch==2.13.*" "torchvision==0.28.*" --index-url "$TORCH_INDEX"
 echo "== GAM + perception stack"
