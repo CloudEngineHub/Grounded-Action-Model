@@ -146,7 +146,7 @@ GAM/
 ├── perception/          # patch_tokens (WildDet3D wrapper), geometry, tracker, arm_render, draw
 ├── data/                # HDF5 and LeRobot episode readers, cache / e2e datasets, Panda FK
 ├── text/                # T5 span head: segmenter, phrases, training and label-building scripts
-├── tools/               # track (offline CoTracker), verify, viz_cache, eval_offline
+├── tools/               # track (offline CoTracker), check_calibration, verify, viz_cache, eval_offline
 └── eval/
     ├── runner.py        # GAMRunner: observation -> action chunk (+ 3D boxes)
     ├── chunker.py       # ActionChunker: replan | tempens | rtc
@@ -274,6 +274,9 @@ python benchmarks/lerobot/inspect_dataset.py user/dataset                   # ca
 python benchmarks/lerobot/train.py --config my_task.yaml --mode precompute  # feature cache once, then fast training (24 GB GPU); --max-episodes 3 --max-steps 10 for a smoke run
 python benchmarks/lerobot/train.py --config my_task.yaml --mode e2e         # perception inside the training loop, nothing stored
 #   -> runs/<task>/latest.pt (checkpoints.policy for evaluation)
+
+# check the camera calibration and the URDF first: the robot silhouette projected with K, E and the joint state, over the image
+python -m GAM.tools.check_calibration --config my_task.yaml --episode 0 --out calib_check
 
 # HDF5 recordings: the same steps, one command each
 python -m GAM.tools.track  --config my_task.yaml      # task string -> object tracks (offline CoTracker)
