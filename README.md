@@ -93,6 +93,18 @@ first use (cached under `HF_HOME`).
 | [`gam-libero-pro-assets`](https://huggingface.co/datasets/gehaozhang/gam-libero-pro-assets) | LIBERO-PRO bddl + initial-state files (the ones in the LIBERO-PRO repository are incomplete) |
 | [`gam-wilddet3d`](https://huggingface.co/gehaozhang/gam-wilddet3d) | general WildDet3D (default for new datasets) and the universal span head |
 
+Checkpoints (each config's `checkpoints:` section points at these; click to download by hand):
+
+| checkpoint | used by | size |
+|---|---|---|
+| [`wilddet3d_robotwin.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/wilddet3d_robotwin.pt) | RoboTwin detector (`configs/robotwin/*.yaml`) | 4.7 GB |
+| [`gam_policy_click_bell.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_click_bell.pt), [`gam_policy_shake_bottle.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_shake_bottle.pt), [`gam_policy_grab_roller.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_grab_roller.pt), [`gam_policy_beat_block_hammer.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_beat_block_hammer.pt), [`gam_policy_place_can_basket.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_place_can_basket.pt), [`gam_policy_stack_bowls_two.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_stack_bowls_two.pt), [`gam_policy_handover_block.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_handover_block.pt) | RoboTwin action experts, one per task | 1.2 GB each |
+| [`wilddet3d_libero_pro.pt`](https://huggingface.co/gehaozhang/gam-libero-pro/blob/main/checkpoints/wilddet3d_libero_pro.pt) | LIBERO-PRO detector (`configs/libero_pro.yaml`) | 4.7 GB |
+| [`gam_policy_libero_pro.pt`](https://huggingface.co/gehaozhang/gam-libero-pro/blob/main/checkpoints/gam_policy_libero_pro.pt) | LIBERO-PRO policy, all four suites | 1.2 GB |
+| [`span_head_libero_pro.pt`](https://huggingface.co/gehaozhang/gam-libero-pro/blob/main/checkpoints/span_head_libero_pro.pt) | LIBERO-PRO span head (`perception.text_slots: span_head`) | 1 MB |
+| [`wilddet3d_general_v1.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/wilddet3d_general_v1.pt) | general detector for your own datasets (`configs/*_bimanual.yaml`, `*_single_arm.yaml`) | 4.7 GB |
+| [`span_head_universal.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/span_head_universal.pt) | universal span head: task string -> object phrases | 26 MB |
+
 ## 💻 Requirements
 
 Linux x86_64, Python 3.11, CUDA 12.6 / 12.8 / 13.0 (torch 2.13). Measured on one L40S:
@@ -265,8 +277,8 @@ GAM trains from your own demonstrations with no manual labelling. Two general we
 huggingface-cli download gehaozhang/gam-wilddet3d wilddet3d_general_v1.pt span_head_universal.pt --local-dir checkpoints/
 ```
 
-- `wilddet3d_general_v1.pt`: the general WildDet3D detector (text / point prompts, 2D + 3D boxes, depth), 4.7 GB
-- `span_head_universal.pt`: the universal span head: task string → object phrases, 26 MB
+- [`wilddet3d_general_v1.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/wilddet3d_general_v1.pt): the general WildDet3D detector (text / point prompts, 2D + 3D boxes, depth), 4.7 GB
+- [`span_head_universal.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/span_head_universal.pt): the universal span head: task string → object phrases, 26 MB
 
 Then pick the template for your robot, bimanual
 (14-dim joint layout, object geometry in the robot base frame, as RoboTwin 2.0) or single-arm Franka (7 joints + gripper,
