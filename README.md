@@ -83,27 +83,15 @@ never sees a sentence and never sees the whole image, only the objects it was po
 
 ## 📦 Model Download
 
-Nothing has to be downloaded by hand: every config references the Hub as `hf://...` and the files are fetched on
-first use (cached under `HF_HOME`).
-
-| Repository | Contents |
-|---|---|
-| [`gam-robotwin`](https://huggingface.co/gehaozhang/gam-robotwin) | RoboTwin-tuned WildDet3D, one action expert per task (7 tasks), the precomputed training cache of every task |
-| [`gam-libero-pro`](https://huggingface.co/gehaozhang/gam-libero-pro) | LIBERO-tuned WildDet3D, one policy for all four suites, its span head, the precomputed training cache |
-| [`gam-libero-pro-assets`](https://huggingface.co/datasets/gehaozhang/gam-libero-pro-assets) | LIBERO-PRO bddl + initial-state files (the ones in the LIBERO-PRO repository are incomplete) |
-| [`gam-wilddet3d`](https://huggingface.co/gehaozhang/gam-wilddet3d) | general WildDet3D (default for new datasets) and the universal span head |
-
-Checkpoints (each config's `checkpoints:` section points at these; click to download by hand):
-
-| checkpoint | used by | size |
+| Benchmark | Checkpoint | Trained on |
 |---|---|---|
-| [`wilddet3d_robotwin.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/wilddet3d_robotwin.pt) | RoboTwin detector (`configs/robotwin/*.yaml`) | 4.7 GB |
-| [`gam_policy_click_bell.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_click_bell.pt), [`gam_policy_shake_bottle.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_shake_bottle.pt), [`gam_policy_grab_roller.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_grab_roller.pt), [`gam_policy_beat_block_hammer.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_beat_block_hammer.pt), [`gam_policy_place_can_basket.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_place_can_basket.pt), [`gam_policy_stack_bowls_two.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_stack_bowls_two.pt), [`gam_policy_handover_block.pt`](https://huggingface.co/gehaozhang/gam-robotwin/blob/main/checkpoints/gam_policy_handover_block.pt) | RoboTwin action experts, one per task | 1.2 GB each |
-| [`wilddet3d_libero_pro.pt`](https://huggingface.co/gehaozhang/gam-libero-pro/blob/main/checkpoints/wilddet3d_libero_pro.pt) | LIBERO-PRO detector (`configs/libero_pro.yaml`) | 4.7 GB |
-| [`gam_policy_libero_pro.pt`](https://huggingface.co/gehaozhang/gam-libero-pro/blob/main/checkpoints/gam_policy_libero_pro.pt) | LIBERO-PRO policy, all four suites | 1.2 GB |
-| [`span_head_libero_pro.pt`](https://huggingface.co/gehaozhang/gam-libero-pro/blob/main/checkpoints/span_head_libero_pro.pt) | LIBERO-PRO span head (`perception.text_slots: span_head`) | 1 MB |
-| [`wilddet3d_general_v1.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/wilddet3d_general_v1.pt) | general detector for your own datasets (`configs/*_bimanual.yaml`, `*_single_arm.yaml`) | 4.7 GB |
-| [`span_head_universal.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/span_head_universal.pt) | universal span head: task string -> object phrases | 26 MB |
+| RoboTwin 2.0 | [`gam-robotwin`](https://huggingface.co/gehaozhang/gam-robotwin) | 7 tasks, 50 clean demonstrations each (one expert per task) + the RoboTwin-tuned detector and training caches |
+| LIBERO-PRO | [`gam-libero-pro`](https://huggingface.co/gehaozhang/gam-libero-pro) | all four LIBERO suites, 50 demonstrations per task (one policy) + the LIBERO-tuned detector, span head and training cache |
+| Your own dataset | [`gam-wilddet3d`](https://huggingface.co/gehaozhang/gam-wilddet3d) | the general WildDet3D detector and the universal span head |
+
+The LIBERO-PRO task files (bddl + initial states) are in
+[`gam-libero-pro-assets`](https://huggingface.co/datasets/gehaozhang/gam-libero-pro-assets). Nothing has to be downloaded by
+hand: every config references these repositories as `hf://...` and the files are fetched on first use (cached under `HF_HOME`).
 
 ## 💻 Requirements
 
