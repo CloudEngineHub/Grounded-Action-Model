@@ -85,7 +85,7 @@ never sees a sentence and never sees the whole image, only the objects it was po
 
 | Benchmark | Checkpoint | Trained on |
 |---|---|---|
-| RoboTwin 2.0 | [`gam-robotwin`](https://huggingface.co/gehaozhang/gam-robotwin) | 7 tasks, 50 clean demonstrations each (one expert per task) + the RoboTwin-tuned detector and training caches |
+| RoboTwin 2.0 | [`gam-robotwin`](https://huggingface.co/gehaozhang/gam-robotwin) | 50 clean demonstrations per task (one expert per task) + the RoboTwin-tuned detector and training caches; task checkpoints still being released |
 | LIBERO-PRO | [`gam-libero-pro`](https://huggingface.co/gehaozhang/gam-libero-pro) | all four LIBERO suites, 50 demonstrations per task (one policy) + the LIBERO-tuned detector, span head and training cache |
 | Your own dataset | [`gam-wilddet3d`](https://huggingface.co/gehaozhang/gam-wilddet3d) | the general WildDet3D detector and the universal span head |
 
