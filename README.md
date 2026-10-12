@@ -190,7 +190,7 @@ python -m GAM.precompute --config configs/robotwin/shake_bottle.yaml
 
 Any other robot follows
 `configs/example_bimanual.yaml` / `configs/example_single_arm.yaml` (HDF5 keys) or a LeRobot dataset ([below](#-your-own-dataset)).
-Precomputing needs under 8 GB of GPU memory and about 1 s per frame.
+Precomputing needs under 8 GB of GPU memory.
 
 ## 🚀 Training
 
