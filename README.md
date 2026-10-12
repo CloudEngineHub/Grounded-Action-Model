@@ -7,9 +7,9 @@
 
 <p align="center">
   <a href="https://gehaozhang6.github.io/">Gehao Zhang</a><sup>1</sup> ·
-  Weikai Huang<sup>2</sup> ·
-  Shailesh Shailesh<sup>3</sup> ·
-  Yiyan Peng<sup>1</sup> ·
+  <a href="https://weikaih04.github.io/">Weikai Huang</a><sup>2</sup> ·
+  <a href="https://shailes-h.github.io/">Shailesh Shailesh</a><sup>3</sup> ·
+  <a href="https://666harrypeng.github.io/">Yiyan Peng</a><sup>1</sup> ·
   <a href="https://jiafei1224.github.io/">Jiafei Duan</a><sup>3</sup> ·
   <a href="https://ranjaykrishna.com/index.html">Ranjay Krishna</a><sup>2</sup>
   <br>
