@@ -351,7 +351,7 @@ sentence: a T5 **span head** turns the instruction into the object phrases that 
 detector's prompts (one slot each); reference landmarks after "from / on / next to / ..." are dropped so only the objects
 to act on are grounded. The released universal head ([`gehaozhang/gam-wilddet3d/span_head_universal.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/span_head_universal.pt), flan-t5-large +
 a 2-layer transformer head), for example: `"pick up the screwdriver from the toolbox and hand it over"` → slots
-`["screwdriver"]` (the toolbox is a landmark, not a target).
+`["screwdriver"]`.
 
 It was trained on RoboTwin templates, LIBERO, DROID instructions and ~78k LeRobot task strings, so on your own phrasing it
 **may need retraining**: label a few hundred of your instructions as `{"instruction": ..., "span": [object phrases]}` and
