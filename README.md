@@ -172,8 +172,8 @@ and they train as downloaded):
 
 | Benchmark | `train.cache_dir` | Size |
 |---|---|---|
-| RoboTwin 2.0 | `hf://gehaozhang/gam-robotwin/cache/<task>/` | 1-6 GB per task |
-| LIBERO-PRO | `hf://gehaozhang/gam-libero-pro/cache/` | 11 GB (2000 demonstrations) |
+| RoboTwin 2.0 | [`hf://gehaozhang/gam-robotwin/cache/<task>/`](https://huggingface.co/gehaozhang/gam-robotwin/tree/main/cache) | 1-6 GB per task |
+| LIBERO-PRO | [`hf://gehaozhang/gam-libero-pro/cache/`](https://huggingface.co/gehaozhang/gam-libero-pro/tree/main/cache) | 11 GB (2000 demonstrations) |
 
 Or precompute your own. LIBERO demonstrations are replayed in the simulator by `benchmarks/libero_pro/precompute.py`
 (`LIBERO_DATASETS` = the LIBERO HDF5 root). RoboTwin demonstrations are collected with RoboTwin's own script using the
@@ -367,7 +367,7 @@ while not done:                                # rgb (H,W,3), depth (H,W) m or m
 When `GAM.tools.track` prints the wrong objects for your instructions, this is the part to adjust. The policy never reads the
 sentence: a T5 **span head** turns the instruction into the object phrases that become the
 detector's prompts (one slot each); reference landmarks after "from / on / next to / ..." are dropped so only the objects
-to act on are grounded. The released universal head (`gehaozhang/gam-wilddet3d/span_head_universal.pt`, flan-t5-large +
+to act on are grounded. The released universal head ([`gehaozhang/gam-wilddet3d/span_head_universal.pt`](https://huggingface.co/gehaozhang/gam-wilddet3d/blob/main/span_head_universal.pt), flan-t5-large +
 a 2-layer transformer head), for example: `"pick up the screwdriver from the toolbox and hand it over"` → slots
 `["screwdriver"]` (the toolbox is a landmark, not a target).
 
