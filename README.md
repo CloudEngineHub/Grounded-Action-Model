@@ -231,17 +231,6 @@ python benchmarks/libero_pro/run_all.py --config configs/libero_pro.yaml --gpus 
 python benchmarks/libero_pro/score.py   --config configs/libero_pro.yaml                                      # the table: per cell, the mean of its 10 tasks' success rates
 ```
 
-How the reported LIBERO-PRO evaluation grounds objects, for transparency: with `perception.text_slots: table` the
-instruction is mapped to its object phrases through two lookup tables shipped in `benchmarks/libero_pro/assets/`
-(`span_cache.json`, `lang_slots.json`), keyed by the 104 instructions of the benchmark (the language variant's rewrites
-included), and the released `span_head_libero_pro.pt` was fine-tuned on labels for those same instructions
-(`span_labels.json`); an instruction outside the tables falls back to the span head. `perception.click_shift` in
-`configs/libero_pro.yaml` moves the tracker's start point by 8 px for two tasks (object / language and object / object,
-task 3). Depth: on LIBERO-PRO the detector is given the simulator's rendered depth image together with the RGB
-(`detector_depth: sim`, the same RGB-D observation at training and evaluation), while object geometry still comes from
-the detector's own predicted boxes and depth; RoboTwin runs monocular (`detector_depth: zero`). Neither benchmark reads
-object poses or any other simulator state; all of the above is in the config.
-
 ### RoboTwin 2.0
 
 ```bash
