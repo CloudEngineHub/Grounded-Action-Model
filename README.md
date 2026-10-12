@@ -5,6 +5,7 @@
   <a href="https://grounded-action-model.github.io/"><img src="https://img.shields.io/badge/Project%20Page-grounded--action--model.github.io-F0369B.svg" alt="Project page"></a>
   <a href="https://huggingface.co/gehaozhang"><img src="https://img.shields.io/badge/Checkpoints_%26_Caches-Hugging_Face-yellow.svg" alt="Hugging Face"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
+  <a href="https://x.com/gehao_zhang_"><img src="https://img.shields.io/badge/Twitter-@gehao__zhang__-1DA1F2.svg?logo=x&logoColor=white" alt="Twitter"></a>
 </p>
 
 <p align="center">
