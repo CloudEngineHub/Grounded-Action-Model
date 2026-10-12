@@ -1,0 +1,88 @@
+# GAM trained from a LeRobot dataset of a BIMANUAL robot (RGB + 14-dim joint state / action + task string): object geometry
+# in the robot base frame (pcd_ref: none), as RoboTwin. Single-arm Franka: configs/lerobot_single_arm.yaml.
+# No depth or calibration is stored in LeRobot datasets, so the recipe is the monocular one of the RoboTwin line: the detector
+# predicts the depth; you provide the camera calibration (constant for a fixed camera) and, for the robot
+# mask, the robot's URDF.
+#   python benchmarks/lerobot/train.py --config configs/lerobot_bimanual.yaml [--mode precompute|e2e]
+#   (= GAM.tools.track: span head + frame-0 detection + offline CoTracker -> tracks; then
+#      precompute: feature cache on disk once, fast training  |  e2e: perception inside the training loop, nothing stored)
+# Images: the detector resizes (letterbox) to 1008x1008; 640x480 or more is fine, 256x256 datasets lose small objects.
+# The dataset is read directly from its files (parquet + mp4, LeRobot v2.1 / v3.0); the lerobot package is not required.
+
+task: my_lerobot_task
+
+checkpoints:
+  wilddet3d: hf://gehaozhang/gam-wilddet3d/wilddet3d_general_v1.pt   # general detector (trained on DROID and other real data); the RoboTwin / LIBERO ones are fine-tuned for those scenes
+  span_head: hf://gehaozhang/gam-wilddet3d/span_head_universal.pt     # task string -> object phrases (universal head: RoboTwin + LIBERO + DROID instructions)
+  cotracker_offline: hf://facebook/cotracker3/scaled_offline.pth                       # follows the objects through each episode
+
+data:
+  source: lerobot
+  repo_id: your-name/your-dataset                # Hub id or a local folder name (with root)
+  root: null                                      # local folder containing the dataset (optional)
+  camera: observation.images.top                  # the RGB feature to use (one fixed camera)
+  depth_key: null                                 # a depth feature (H,W) if your dataset has one; null = monocular
+  depth_unit: m
+  state_key: observation.state                    # joint positions (+ gripper), the layout the policy will see
+  action_key: action                              # absolute joint targets, same layout
+  camera_intrinsics: [[600.0, 0.0, 320.0], [0.0, 600.0, 240.0], [0.0, 0.0, 1.0]]   # REPLACE with your camera's K at the stored resolution (these placeholders run but give wrong geometry)
+  camera_extrinsics: [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0]]                    # REPLACE: 3x4 robot-base -> camera (OpenCV); identity = camera at the base origin
+  extrinsic_is_cam2base: false                    # true if camera_extrinsics is the 4x4 camera pose in the base frame
+  slots: auto                                     # object names from the task string (span head); or list them: [cube, bowl]
+  n_slots: 3                                      # detection slots of the policy (objects beyond this are ignored)
+  clicks:   # written by GAM.tools.track
+    source: tracks
+    tracks_dir: ${GAM_CACHE:-./cache}/lerobot/my_lerobot_task_tracks
+  val_episodes: 2
+
+perception:
+  grounding: click                                # per-frame point prompts from the tracks (text = re-detect by name every frame, no tracks)
+  text_score_min: 0.3
+  detector_depth: zero
+  geometry_depth: pred
+  geometry_source: box3d
+  patch_grid: 36
+  n_points: 512
+  table_remove: true                           # drop the table plane from the geometry depth: the dominant height of the back-projected points (base z up) plus table_margin
+  table_margin: 0.008
+  cell_min_overlap: 0.3
+  image_channel_swap: false
+  letterbox: true
+  box_whl_perm: [1, 2, 0]                       # extents axis order of the general detector ([0, 1, 2] for the RoboTwin / LIBERO fine-tuned ones)
+  precision: fp32
+  deterministic: true
+  # robot:                                        # URDF silhouette mask (omit = no robot mask)
+  #   urdf: /path/to/robot.urdf
+  #   joint_names: [...]                          # order of state_key
+  #   T_base_root: [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]
+
+train:
+  cache_dir: ${GAM_CACHE:-./cache}/lerobot/my_lerobot_task
+  cache_glob: "*.npz"
+  out_dir: ${GAM_RUNS:-./runs}/lerobot/my_lerobot_task
+  horizon: 50
+  n_action_steps: 50
+  state_hist: 2
+  batch_size: 16
+  grad_accum: 3
+  lr: 2.0e-4
+  weight_decay: 1.0e-3
+  warmup_steps: 300
+  max_steps: 12000
+  save_every: 2000
+  snapshot_every_saves: 1
+  state_dropout: 0.2
+  det_xyz_dropout: 0.0
+  patch_dropout: 0.3
+  det_role_cam: false
+  pcd_ref: none                                   # base-frame geometry (bimanual default)
+  lang_mode: none
+
+eval:                                             # GAM.eval.run (--env your adapter | replay) / inprocess_policy
+  precision: bf16
+  chunking: replan
+  replan: {exec_steps: 15, seam_blend: true}
+  tempens: {k: 0.01, query_every: 4}
+  rtc: {exec_steps: 15, delay: 1}
+  gripper_dims: [6, 13]
+  out_dir: ${GAM_RUNS:-./runs}/lerobot/my_lerobot_task/eval

@@ -1,0 +1,1140 @@
+[
+ {
+  "instruction": "lift the black bowl between the plate and ramekin and set it on the plate",
+  "span": [
+   "black bowl between the plate and ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "lift the black bowl from the table center and put it on the plate",
+  "span": [
+   "black bowl from the table center",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "take the black bowl from the top drawer and put it on plate",
+  "span": [
+   "black bowl from the top drawer",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "grab the black bowl beside the cookie box and set it on plate",
+  "span": [
+   "black bowl beside the cookie box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "pick the bowl beside the plate and put it on plate",
+  "span": [
+   "bowl beside the plate",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "take black bowl next to ramekin and place on plate",
+  "span": [
+   "black bowl next to ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "lift black bowl from cookie box and put it on plate",
+  "span": [
+   "black bowl from cookie box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "grab black bowl on ramekin and set it on plate",
+  "span": [
+   "black bowl on ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "lift bowl from stove and set on plate",
+  "span": [
+   "bowl from stove",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "lift bowl from cabinet and put on plate",
+  "span": [
+   "bowl from cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl between the plate and the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl between the plate and the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl from table center and place it on the plate",
+  "span": [
+   "akita black bowl from table center",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl in the top layer of the wooden cabinet and place it on the plate",
+  "span": [
+   "akita black bowl in the top layer of the wooden cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the cookies box and place it on the plate",
+  "span": [
+   "akita black bowl next to the cookies box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the plate and place it on the plate",
+  "span": [
+   "akita black bowl next to the plate",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl next to the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the cookies box and place it on the plate",
+  "span": [
+   "akita black bowl on the cookies box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl on the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the stove and place it on the plate",
+  "span": [
+   "akita black bowl on the stove",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the wooden cabinet and place it on the plate",
+  "span": [
+   "akita black bowl on the wooden cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl between the plate and the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl between the plate and the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl from table center and place it on the plate",
+  "span": [
+   "akita black bowl from table center",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl in the top layer of the wooden cabinet and place it on the plate",
+  "span": [
+   "akita black bowl in the top layer of the wooden cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the cookies box and place it on the plate",
+  "span": [
+   "akita black bowl next to the cookies box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the plate and place it on the plate",
+  "span": [
+   "akita black bowl next to the plate",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl next to the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the cookies box and place it on the plate",
+  "span": [
+   "akita black bowl on the cookies box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl on the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the stove and place it on the plate",
+  "span": [
+   "akita black bowl on the stove",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the wooden cabinet and place it on the plate",
+  "span": [
+   "akita black bowl on the wooden cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl not between the plate and the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl not between the plate and the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the plate and place it on the plate",
+  "span": [
+   "akita black bowl next to the plate",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the top of the wooden cabinet and place it on the plate",
+  "span": [
+   "akita black bowl on the top of the wooden cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the stove and place it on the plate",
+  "span": [
+   "akita black bowl on the stove",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the ramekin and place it on the plate",
+  "span": [
+   "akita black bowl next to the ramekin",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl next to the cookie box and place it on the plate",
+  "span": [
+   "akita black bowl next to the cookie box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the top of the cabinet and place it on the plate",
+  "span": [
+   "akita black bowl on the top of the cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the cookie box and place it on the plate",
+  "span": [
+   "akita black bowl on the cookie box",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the top of the cabinet and place it on the plate",
+  "span": [
+   "akita black bowl on the top of the cabinet",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Pick the akita black bowl on the stove and place it on the plate",
+  "span": [
+   "akita black bowl on the stove",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "grab alphabet soup and put it into basket",
+  "span": [
+   "alphabet soup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "pick up bbq sauce and put it into basket",
+  "span": [
+   "bbq sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "grab butter and put it into basket",
+  "span": [
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "lift chocolate pudding and put it in basket",
+  "span": [
+   "chocolate pudding",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "grab cream cheese and put into basket",
+  "span": [
+   "cream cheese",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "lift ketchup and put it in basket",
+  "span": [
+   "ketchup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "grab milk and put into basket",
+  "span": [
+   "milk",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "pick orange juice and put into basket",
+  "span": [
+   "orange juice",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "grab salad dressing and put into basket",
+  "span": [
+   "salad dressing",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "pick tomato sauce and put it in basket",
+  "span": [
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the alphabet soup and place it in the basket",
+  "span": [
+   "alphabet soup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the bbq sauce and place it in the basket",
+  "span": [
+   "bbq sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the butter and place it in the basket",
+  "span": [
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the chocolate pudding and place it in the basket",
+  "span": [
+   "chocolate pudding",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the cream cheese and place it in the basket",
+  "span": [
+   "cream cheese",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the ketchup and place it in the basket",
+  "span": [
+   "ketchup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the milk and place it in the basket",
+  "span": [
+   "milk",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the orange juice and place it in the basket",
+  "span": [
+   "orange juice",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the salad dressing and place it in the basket",
+  "span": [
+   "salad dressing",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the tomato sauce and place it in the basket",
+  "span": [
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the alphabet soup and place it in the basket",
+  "span": [
+   "alphabet soup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the bbq sauce and place it in the basket",
+  "span": [
+   "bbq sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the butter and place it in the basket",
+  "span": [
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the chocolate pudding and place it in the basket",
+  "span": [
+   "chocolate pudding",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the cream cheese and place it in the basket",
+  "span": [
+   "cream cheese",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the ketchup and place it in the basket",
+  "span": [
+   "ketchup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the milk and place it in the basket",
+  "span": [
+   "milk",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the orange juice and place it in the basket",
+  "span": [
+   "orange juice",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the salad dressing and place it in the basket",
+  "span": [
+   "salad dressing",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the tomato sauce and place it in the basket",
+  "span": [
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the cream cheese and place it in the basket",
+  "span": [
+   "cream cheese",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the ketchup and place it in the basket",
+  "span": [
+   "ketchup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the orange juice and place it in the basket",
+  "span": [
+   "orange juice",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the salad dressing and place it in the basket",
+  "span": [
+   "salad dressing",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the alphabet soup and place it in the basket",
+  "span": [
+   "alphabet soup",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the milk and place it in the basket",
+  "span": [
+   "milk",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the butter and place it in the basket",
+  "span": [
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the chocolate pudding and place it in the basket",
+  "span": [
+   "chocolate pudding",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the tomato sauce and place it in the basket",
+  "span": [
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "Pick the bbq sauce and place it in the basket",
+  "span": [
+   "bbq sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "open the cabinet\u2019s middle drawer",
+  "span": [
+   "middle drawer"
+  ]
+ },
+ {
+  "instruction": "slide open the top drawer and place the bowl in it",
+  "span": [
+   "top drawer",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "move the plate to the stove\u2019s front",
+  "span": [
+   "plate"
+  ]
+ },
+ {
+  "instruction": "place the bowl on top of the plate",
+  "span": [
+   "bowl",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "place the bowl on the stove",
+  "span": [
+   "bowl",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "place the bowl on top of the cabinet",
+  "span": [
+   "bowl",
+   "top of the cabinet"
+  ]
+ },
+ {
+  "instruction": "place the cream cheese inside the bowl",
+  "span": [
+   "cream cheese",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "place the wine bottle on the rack",
+  "span": [
+   "wine bottle",
+   "rack"
+  ]
+ },
+ {
+  "instruction": "place the wine bottle on top of the cabinet",
+  "span": [
+   "wine bottle",
+   "top of the cabinet"
+  ]
+ },
+ {
+  "instruction": "switch on the stove",
+  "span": [
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Open the middle layer of the drawer",
+  "span": [
+   "middle layer of the drawer"
+  ]
+ },
+ {
+  "instruction": "Open the top layer of the drawer and put the bowl inside",
+  "span": [
+   "top layer of the drawer",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "Push the plate to the front of the stove",
+  "span": [
+   "plate",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Put the bowl on the plate",
+  "span": [
+   "bowl",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Put the bowl on the stove",
+  "span": [
+   "bowl",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Put the bowl on the top of the drawer",
+  "span": [
+   "bowl",
+   "top of the drawer"
+  ]
+ },
+ {
+  "instruction": "Put the cream cheese on the bowl",
+  "span": [
+   "cream cheese",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "Put the wine bottle on the rack",
+  "span": [
+   "wine bottle",
+   "rack"
+  ]
+ },
+ {
+  "instruction": "Put the wine bottle on the top of the drawer",
+  "span": [
+   "wine bottle",
+   "top of the drawer"
+  ]
+ },
+ {
+  "instruction": "Turn on the stove",
+  "span": [
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Open the middle layer of the drawer",
+  "span": [
+   "middle layer of the drawer"
+  ]
+ },
+ {
+  "instruction": "Open the top layer of the drawer and put the bowl inside",
+  "span": [
+   "top layer of the drawer",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "Push the plate to the front of the stove",
+  "span": [
+   "plate",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Put the bowl on the plate",
+  "span": [
+   "bowl",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Put the bowl on the stove",
+  "span": [
+   "bowl",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Put the bowl on the top of the drawer",
+  "span": [
+   "bowl",
+   "top of the drawer"
+  ]
+ },
+ {
+  "instruction": "Put the cream cheese on the bowl",
+  "span": [
+   "cream cheese",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "Put the wine bottle on the rack",
+  "span": [
+   "wine bottle",
+   "rack"
+  ]
+ },
+ {
+  "instruction": "Put the wine bottle on the top of the drawer",
+  "span": [
+   "wine bottle",
+   "top of the drawer"
+  ]
+ },
+ {
+  "instruction": "Turn on the stove",
+  "span": [
+   "stove"
+  ]
+ },
+ {
+  "instruction": "open the bottom drawer of the cabinet",
+  "span": [
+   "bottom drawer of the cabinet"
+  ]
+ },
+ {
+  "instruction": "Open the top layer of the drawer and put the cream cheese inside",
+  "span": [
+   "top layer of the drawer",
+   "cream cheese"
+  ]
+ },
+ {
+  "instruction": "Push the cream cheese to the front of the stove",
+  "span": [
+   "cream cheese",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Put the wine bottle on the plate",
+  "span": [
+   "wine bottle",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "Put the plate on the stove",
+  "span": [
+   "plate",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "Put the plate on the top of the drawer",
+  "span": [
+   "plate",
+   "top of the drawer"
+  ]
+ },
+ {
+  "instruction": "put the wine bottle in the bowl",
+  "span": [
+   "wine bottle",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "Put the cream cheese on the rack",
+  "span": [
+   "cream cheese",
+   "rack"
+  ]
+ },
+ {
+  "instruction": "put the wine bottle in the bowl",
+  "span": [
+   "wine bottle",
+   "bowl"
+  ]
+ },
+ {
+  "instruction": "Turn off the stove",
+  "span": [
+   "stove"
+  ]
+ },
+ {
+  "instruction": "switch stove on and put moka pot on it",
+  "span": [
+   "stove",
+   "moka pot"
+  ]
+ },
+ {
+  "instruction": "put black bowl inside bottom drawer and close it",
+  "span": [
+   "black bowl",
+   "bottom drawer"
+  ]
+ },
+ {
+  "instruction": "place yellow and white mug in microwave and close door",
+  "span": [
+   "yellow and white mug",
+   "microwave"
+  ]
+ },
+ {
+  "instruction": "place both moka pots on stove",
+  "span": [
+   "both moka pots",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "put alphabet soup and cream cheese box in basket",
+  "span": [
+   "alphabet soup",
+   "cream cheese box",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "place alphabet soup and tomato sauce into basket",
+  "span": [
+   "alphabet soup",
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "place cream cheese box and butter into basket",
+  "span": [
+   "cream cheese box",
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "place white mug on left plate and yellow-white mug on right plate",
+  "span": [
+   "white mug",
+   "left plate",
+   "mug",
+   "right plate"
+  ]
+ },
+ {
+  "instruction": "place white mug on plate and chocolate pudding to right",
+  "span": [
+   "white mug",
+   "plate",
+   "chocolate pudding"
+  ]
+ },
+ {
+  "instruction": "pick up the book and place in back compartment",
+  "span": [
+   "book",
+   "back compartment"
+  ]
+ },
+ {
+  "instruction": "turn on the stove and put the moka pot on it",
+  "span": [
+   "stove",
+   "moka pot"
+  ]
+ },
+ {
+  "instruction": "put the black bowl in the bottom drawer of the cabinet and close it",
+  "span": [
+   "black bowl",
+   "bottom drawer of the cabinet"
+  ]
+ },
+ {
+  "instruction": "put the yellow and white mug in the microwave and close it",
+  "span": [
+   "yellow and white mug",
+   "microwave"
+  ]
+ },
+ {
+  "instruction": "put both moka pots on the stove",
+  "span": [
+   "both moka pots",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "put both the alphabet soup and the cream cheese box in the basket",
+  "span": [
+   "alphabet soup",
+   "cream cheese box",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put both the alphabet soup and the tomato sauce in the basket",
+  "span": [
+   "alphabet soup",
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put both the cream cheese box and the butter in the basket",
+  "span": [
+   "cream cheese box",
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+  "span": [
+   "white mug",
+   "left plate",
+   "yellow and white mug",
+   "right plate"
+  ]
+ },
+ {
+  "instruction": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+  "span": [
+   "white mug",
+   "plate",
+   "chocolate pudding",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "pick up the book and place it in the back compartment of the caddy",
+  "span": [
+   "book",
+   "back compartment of the caddy"
+  ]
+ },
+ {
+  "instruction": "turn on the stove and put the moka pot on it",
+  "span": [
+   "stove",
+   "moka pot"
+  ]
+ },
+ {
+  "instruction": "put the black bowl in the bottom drawer of the cabinet and close it",
+  "span": [
+   "black bowl",
+   "bottom drawer of the cabinet"
+  ]
+ },
+ {
+  "instruction": "put the yellow and white mug in the microwave and close it",
+  "span": [
+   "yellow and white mug",
+   "microwave"
+  ]
+ },
+ {
+  "instruction": "put both moka pots on the stove",
+  "span": [
+   "both moka pots",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "put both the alphabet soup and the cream cheese box in the basket",
+  "span": [
+   "alphabet soup",
+   "cream cheese box",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put both the alphabet soup and the tomato sauce in the basket",
+  "span": [
+   "alphabet soup",
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put both the cream cheese box and the butter in the basket",
+  "span": [
+   "cream cheese box",
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+  "span": [
+   "white mug",
+   "left plate",
+   "yellow and white mug",
+   "right plate"
+  ]
+ },
+ {
+  "instruction": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+  "span": [
+   "white mug",
+   "plate",
+   "chocolate pudding",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "pick up the book and place it in the back compartment of the caddy",
+  "span": [
+   "book",
+   "back compartment of the caddy"
+  ]
+ },
+ {
+  "instruction": "turn on the stove and put the pan on it",
+  "span": [
+   "stove",
+   "pan"
+  ]
+ },
+ {
+  "instruction": "put the bottle in the bottom drawer of the cabinet and close it",
+  "span": [
+   "bottle",
+   "bottom drawer"
+  ]
+ },
+ {
+  "instruction": "put the white mug in the microwave and close it",
+  "span": [
+   "white mug",
+   "microwave"
+  ]
+ },
+ {
+  "instruction": "put the left moka pot on the stove",
+  "span": [
+   "left moka pot",
+   "stove"
+  ]
+ },
+ {
+  "instruction": "put both the ketchup and the cream cheese box in the basket",
+  "span": [
+   "ketchup",
+   "cream cheese box",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put both the cream cheese and the tomato sauce in the basket",
+  "span": [
+   "cream cheese",
+   "tomato sauce",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put both the alphabet soup and the butter in the basket",
+  "span": [
+   "alphabet soup",
+   "butter",
+   "basket"
+  ]
+ },
+ {
+  "instruction": "put the yellow and white mug on the left plate and put the white mug on the right plate",
+  "span": [
+   "yellow and white mug",
+   "left plate",
+   "white mug",
+   "right plate"
+  ]
+ },
+ {
+  "instruction": "put the red mug on the plate and put the chocolate pudding to the right of the plate",
+  "span": [
+   "red mug",
+   "plate",
+   "chocolate pudding",
+   "plate"
+  ]
+ },
+ {
+  "instruction": "pick up the cup and place it in the back compartment of the caddy",
+  "span": [
+   "cup",
+   "back compartment of the caddy"
+  ]
+ }
+]

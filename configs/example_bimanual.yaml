@@ -1,0 +1,103 @@
+# Template for a new dataset on a BIMANUAL robot (14-dim joint state / action, as RoboTwin 2.0): object geometry
+# in the robot base frame (train.pcd_ref: none). Single-arm Franka: configs/example_single_arm.yaml.
+# Copy, point the keys at your HDF5 layout, and run
+#   python -m GAM.precompute --config my.yaml      (raw episodes -> feature cache)
+#   python -m GAM.train      --config my.yaml      (cache -> checkpoint)    [--e2e: no cache]
+#   python -m GAM.eval.run   --config my.yaml --ckpt runs/my_task/latest.pt --env my_robot.py:MyEnv
+
+
+checkpoints:
+  wilddet3d: hf://gehaozhang/gam-wilddet3d/wilddet3d_general_v1.pt   # the general detector (box extents order [1, 2, 0]); a fine-tuned one needs its own order
+  policy: /path/to/policy.pt                 # used by evaluation; training writes train.out_dir/latest.pt
+
+# ---------------------------------------------------------------- data (episode schema)
+data:
+  episodes_glob: /path/to/episodes/episode_*.hdf5
+  rgb_key: vision/cam_head/colors            # (T,H,W,3) uint8  OR (T,) JPEG bytes
+  depth_key: vision/cam_head/depth           # (T,H,W)
+  depth_unit: mm                             # mm | m
+  intrinsic_key: vision/cam_head/intrinsic   # (3,3) or (T,3,3)
+  extrinsic_key: vision/cam_head/extrinsic   # (3,4)/(T,3,4) base->camera (OpenCV)  OR 4x4 camera pose
+  extrinsic_is_cam2base: false               # true if extrinsic_key is the 4x4 camera pose in the base frame
+  state_key: joint_state/vector              # (T,14)  [arm_L(6), grip_L, arm_R(6), grip_R]
+  action_key: joint_action/vector            # (T,14)  absolute joint targets, same layout
+  instruction_key: instruction               # optional
+  slots: [object]                            # one slot per manipulated object -> 8 detection tokens each
+  clicks:
+    source: none                             # none (text grounding) | dataset | tracks
+    # dataset_key: clicks                    # (S,2) frame-0 px or (T,S,2) per-frame  (dataset)
+    # tracks_dir: /path/tracks               # GAM/tools/track.py output: per-frame CoTracker points  (tracks)
+  val_episodes: 2                            # last N episodes held out for the validation loss
+
+# ---------------------------------------------------------------- perception (stored in the checkpoint)
+perception:
+  grounding: text                            # text: every slot is detected from its name on every frame
+                                             # click: prompt the detector with the slot's pixel (data.clicks)
+  text_score_min: 0.3                        # a text detection below this score leaves the slot empty
+  detector_depth: zero                       # depth given to WildDet3D: zero (monocular) | sensor
+  geometry_depth: pred                       # depth for the object point clouds: pred (detector) | sensor
+  geometry_source: box3d                     # object box: box3d (predicted 3D box) | box2d_depth (2D box + depth)
+  patch_grid: 36                             # image tokens = grid x grid
+  n_points: 512                              # points per object slot
+  table_remove: true                           # drop the table plane from the geometry depth: the dominant height of the back-projected points (base z up) plus table_margin
+  table_margin: 0.008
+  cell_min_overlap: 0.30                     # keep an image cell if an object box covers >= this fraction of it
+  image_channel_swap: false                  # true only if your recordings store BGR
+  letterbox: true                            # pad non-square images to a square before resizing
+  box_whl_perm: [1, 2, 0]                    # extents axis order of the general detector; [0, 1, 2] for the RoboTwin / LIBERO fine-tuned ones
+  precision: fp32                            # fp32 | bf16 (bf16 ~40% faster, boxes move < 1 px)
+  deterministic: true                        # TF32 off + cudnn deterministic (reproducible caches)
+  robot:                                     # robot silhouette from the URDF (omit the section = no robot mask)
+    urdf: /path/to/robot.urdf
+    joint_names: [j1, j2, j3, j4, j5, j6, g1, j7, j8, j9, j10, j11, j12, g2]   # order of data.state_key
+    T_base_root: [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]                   # URDF root in the base frame
+    link_filter: [arm_, gripper_]            # render only these links (speed)
+    max_faces: 1500                          # decimate meshes above this triangle count
+    # joint_affine: {g1: [offset, scale]}    # q = offset + value*scale, for normalized gripper values
+    # joint_mirror: {g1_follower: g1}        # second finger copies the first (not in the state)
+
+# ---------------------------------------------------------------- text (only with train.lang_mode: film)
+# text:
+#   span_head: hf://gehaozhang/gam-libero-pro/checkpoints/span_head_libero_pro.pt   # T5 object-phrase head; also gives the sentence embedding
+
+# ---------------------------------------------------------------- training
+train:
+  cache_dir: /path/to/cache/my_task          # precompute output / train input (or hf://user/repo/dir/)
+  cache_glob: "episode*.npz"
+  out_dir: /path/to/runs/my_task
+  horizon: 50                                # action chunk
+  n_action_steps: 50
+  state_hist: 2                              # state token = current + previous joint state
+  batch_size: 48                             # per GPU (36x36 tokens: ~35 GB at 48, ~13 GB at 16)
+  grad_accum: 1                              # effective batch = batch_size x GPUs x grad_accum
+  lr: 2.0e-4
+  weight_decay: 1.0e-3
+  warmup_steps: 300
+  max_steps: 12000
+  save_every: 2000
+  snapshot_every_saves: 1                    # keep a step_N.pt every N saves
+  state_dropout: 0.2                         # zero the whole state token (forces visual grounding)
+  patch_dropout: 0.3                         # zero image tokens at random
+  det_xyz_dropout: 0.0                       # zero the object 3D centre channel per sample
+  attn_dropout: 0.1
+  pcd_ref: none                              # object geometry in the robot base frame (bimanual default); ee = relative to the end effector (single arm)
+  lang_mode: none                            # none | film: a T5 sentence embedding of the instruction modulates every layer (needs text.span_head)
+  num_workers: 8
+  seed: 42
+  # model (defaults = the published architecture)
+  n_emb: 576
+  n_layer: 12
+  n_head: 16
+  tokens_per_slot: 8
+  pcd_dim: 512
+
+# ---------------------------------------------------------------- evaluation (GAM.eval.run / inprocess_policy / server)
+eval:
+  precision: bf16                            # detector precision at test time (fp32 to match training exactly)
+  chunking: replan                           # replan | tempens | rtc
+  replan:  {exec_steps: 15, seam_blend: true}
+  tempens: {k: 0.01, query_every: 4}
+  rtc:     {exec_steps: 15, delay: 1}
+  gripper_dims: [6, 13]                      # action dims never blended / averaged between chunks (the two grippers)
+  episodes: 20
+  out_dir: /path/to/runs/my_task/eval

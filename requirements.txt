@@ -1,0 +1,38 @@
+# GAM + vendored perception stack (sam3 / wilddet3d / mdm). Python 3.11.
+# torch is installed separately by scripts/install.sh (pick the wheel for your CUDA).
+numpy==1.26.4            # 1.x ABI: required by RoboTwin's sapien wheel; fine for everything else
+timm==1.0.27
+transformers==4.46.3
+tokenizers==0.20.3
+safetensors
+einops==0.8.2
+triton
+opencv-python==4.11.0.86
+pillow
+h5py==3.16.0
+pyyaml==6.0.3
+scipy==1.17.1
+trimesh==4.12.2
+yourdfpy==0.0.60         # URDF loading for the robot silhouette
+fast_simplification==0.2.0
+lxml
+networkx
+rtree
+imageio==2.37.3
+imageio-ffmpeg==0.6.0
+matplotlib
+tqdm
+psutil
+regex
+ftfy
+iopath
+pycocotools
+huggingface_hub
+pyarrow                  # LeRobot datasets (parquet)
+pandas
+vis4d==1.0.0             # detector heads used by wilddet3d
+open_clip_torch==3.3.0
+decord==0.6.0
+moge @ git+https://github.com/microsoft/MoGe.git@07444410f1e33f402353b99d6ccd26bd31e469e8
+utils3d @ git+https://github.com/EasternJournalist/utils3d.git@3fab839f0be9931dac7c8488eb0e1600c236e183
+cotracker @ git+https://github.com/facebookresearch/co-tracker.git@82e02e8029753ad4ef13cf06be7f4fc5facdda4d

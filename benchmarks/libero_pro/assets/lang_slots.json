@@ -1,0 +1,626 @@
+{
+ "Open the middle layer of the drawer": [
+  "middle layer of the drawer",
+  null,
+  null,
+  null
+ ],
+ "Open the top layer of the drawer and put the bowl inside": [
+  "bowl",
+  "top layer of the drawer",
+  null,
+  null
+ ],
+ "Open the top layer of the drawer and put the cream cheese inside": [
+  "cream cheese",
+  "top layer of the drawer",
+  null,
+  null
+ ],
+ "Pick the akita black bowl between the plate and the ramekin and place it on the plate": [
+  "akita black bowl between the plate and the ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl from table center and place it on the plate": [
+  "akita black bowl from table center",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl in the top layer of the wooden cabinet and place it on the plate": [
+  "akita black bowl in the top layer of the wooden cabinet",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl next to the cookie box and place it on the plate": [
+  "akita black bowl next to the cookie box",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl next to the cookies box and place it on the plate": [
+  "akita black bowl next to the cookies box",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl next to the plate and place it on the plate": [
+  "akita black bowl next to the plate",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl next to the ramekin and place it on the plate": [
+  "akita black bowl next to the ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl not between the plate and the ramekin and place it on the plate": [
+  "akita black bowl not between the plate and the ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the cookie box and place it on the plate": [
+  "akita black bowl on the cookie box",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the cookies box and place it on the plate": [
+  "akita black bowl on the cookies box",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the ramekin and place it on the plate": [
+  "akita black bowl on the ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the stove and place it on the plate": [
+  "akita black bowl on the stove",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the top of the cabinet and place it on the plate": [
+  "akita black bowl on the top of the cabinet",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the top of the wooden cabinet and place it on the plate": [
+  "akita black bowl on the top of the wooden cabinet",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the akita black bowl on the wooden cabinet and place it on the plate": [
+  "akita black bowl on the wooden cabinet",
+  "plate",
+  null,
+  null
+ ],
+ "Pick the alphabet soup and place it in the basket": [
+  "alphabet soup",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the bbq sauce and place it in the basket": [
+  "bbq sauce",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the butter and place it in the basket": [
+  "butter",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the chocolate pudding and place it in the basket": [
+  "chocolate pudding",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the cream cheese and place it in the basket": [
+  "cream cheese",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the ketchup and place it in the basket": [
+  "ketchup",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the milk and place it in the basket": [
+  "milk",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the orange juice and place it in the basket": [
+  "orange juice",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the salad dressing and place it in the basket": [
+  "salad dressing",
+  "basket",
+  null,
+  null
+ ],
+ "Pick the tomato sauce and place it in the basket": [
+  "tomato sauce",
+  "basket",
+  null,
+  null
+ ],
+ "Push the cream cheese to the front of the stove": [
+  "cream cheese",
+  null,
+  null,
+  null
+ ],
+ "Push the plate to the front of the stove": [
+  "plate",
+  null,
+  null,
+  null
+ ],
+ "Put the bowl on the plate": [
+  "bowl",
+  "plate",
+  null,
+  null
+ ],
+ "Put the bowl on the stove": [
+  "bowl",
+  "stove",
+  null,
+  null
+ ],
+ "Put the bowl on the top of the drawer": [
+  "bowl",
+  "top of the drawer",
+  null,
+  null
+ ],
+ "Put the cream cheese on the bowl": [
+  "cream cheese",
+  "bowl",
+  null,
+  null
+ ],
+ "Put the cream cheese on the rack": [
+  "cream cheese",
+  "rack",
+  null,
+  null
+ ],
+ "Put the plate on the stove": [
+  "plate",
+  "stove",
+  null,
+  null
+ ],
+ "Put the plate on the top of the drawer": [
+  "plate",
+  "top of the drawer",
+  null,
+  null
+ ],
+ "Put the wine bottle on the plate": [
+  "wine bottle",
+  "plate",
+  null,
+  null
+ ],
+ "Put the wine bottle on the rack": [
+  "wine bottle",
+  "rack",
+  null,
+  null
+ ],
+ "Put the wine bottle on the top of the drawer": [
+  "wine bottle",
+  "top of the drawer",
+  null,
+  null
+ ],
+ "Turn off the stove": [
+  "stove",
+  null,
+  null,
+  null
+ ],
+ "Turn on the stove": [
+  "stove",
+  null,
+  null,
+  null
+ ],
+ "grab alphabet soup and put it into basket": [
+  "alphabet soup",
+  "basket",
+  null,
+  null
+ ],
+ "grab black bowl on ramekin and set it on plate": [
+  "black bowl on ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "grab butter and put it into basket": [
+  "butter",
+  "basket",
+  null,
+  null
+ ],
+ "grab cream cheese and put into basket": [
+  "cream cheese",
+  "basket",
+  null,
+  null
+ ],
+ "grab milk and put into basket": [
+  "milk",
+  "basket",
+  null,
+  null
+ ],
+ "grab salad dressing and put into basket": [
+  "salad dressing",
+  "basket",
+  null,
+  null
+ ],
+ "grab the black bowl beside the cookie box and set it on plate": [
+  "black bowl beside the cookie box",
+  "plate",
+  null,
+  null
+ ],
+ "lift black bowl from cookie box and put it on plate": [
+  "black bowl from cookie box",
+  "plate",
+  null,
+  null
+ ],
+ "lift bowl from cabinet and put on plate": [
+  "bowl from cabinet",
+  "plate",
+  null,
+  null
+ ],
+ "lift bowl from stove and set on plate": [
+  "bowl from stove",
+  "plate",
+  null,
+  null
+ ],
+ "lift chocolate pudding and put it in basket": [
+  "chocolate pudding",
+  "basket",
+  null,
+  null
+ ],
+ "lift ketchup and put it in basket": [
+  "ketchup",
+  "basket",
+  null,
+  null
+ ],
+ "lift the black bowl between the plate and ramekin and set it on the plate": [
+  "black bowl between the plate and ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "lift the black bowl from the table center and put it on the plate": [
+  "black bowl from the table center",
+  "plate",
+  null,
+  null
+ ],
+ "move the plate to the stove’s front": [
+  "plate",
+  null,
+  null,
+  null
+ ],
+ "open the bottom drawer of the cabinet": [
+  "bottom drawer of the cabinet",
+  null,
+  null,
+  null
+ ],
+ "open the cabinet’s middle drawer": [
+  "middle drawer",
+  null,
+  null,
+  null
+ ],
+ "pick orange juice and put into basket": [
+  "orange juice",
+  "basket",
+  null,
+  null
+ ],
+ "pick the bowl beside the plate and put it on plate": [
+  "bowl beside the plate",
+  "plate",
+  null,
+  null
+ ],
+ "pick tomato sauce and put it in basket": [
+  "tomato sauce",
+  "basket",
+  null,
+  null
+ ],
+ "pick up bbq sauce and put it into basket": [
+  "bbq sauce",
+  "basket",
+  null,
+  null
+ ],
+ "pick up the book and place in back compartment": [
+  "book",
+  "back compartment",
+  null,
+  null
+ ],
+ "pick up the book and place it in the back compartment of the caddy": [
+  "book",
+  "back compartment of the caddy",
+  null,
+  null
+ ],
+ "pick up the cup and place it in the back compartment of the caddy": [
+  "cup",
+  "back compartment of the caddy",
+  null,
+  null
+ ],
+ "place alphabet soup and tomato sauce into basket": [
+  "alphabet soup",
+  "basket",
+  "tomato sauce",
+  "basket"
+ ],
+ "place both moka pots on stove": [
+  "moka pot",
+  "stove",
+  "moka pot",
+  "stove"
+ ],
+ "place cream cheese box and butter into basket": [
+  "cream cheese box",
+  "basket",
+  "butter",
+  "basket"
+ ],
+ "place the bowl on the stove": [
+  "bowl",
+  "stove",
+  null,
+  null
+ ],
+ "place the bowl on top of the cabinet": [
+  "bowl",
+  "top of the cabinet",
+  null,
+  null
+ ],
+ "place the bowl on top of the plate": [
+  "bowl",
+  "plate",
+  null,
+  null
+ ],
+ "place the cream cheese inside the bowl": [
+  "cream cheese",
+  "bowl",
+  null,
+  null
+ ],
+ "place the wine bottle on the rack": [
+  "wine bottle",
+  "rack",
+  null,
+  null
+ ],
+ "place the wine bottle on top of the cabinet": [
+  "wine bottle",
+  "top of the cabinet",
+  null,
+  null
+ ],
+ "place white mug on left plate and yellow-white mug on right plate": [
+  "white mug",
+  "left plate",
+  "yellow-white mug",
+  "right plate"
+ ],
+ "place white mug on plate and chocolate pudding to right": [
+  "white mug",
+  "plate",
+  "chocolate pudding",
+  null
+ ],
+ "place yellow and white mug in microwave and close door": [
+  "yellow and white mug",
+  "microwave",
+  "microwave",
+  null
+ ],
+ "put alphabet soup and cream cheese box in basket": [
+  "alphabet soup",
+  "basket",
+  "cream cheese box",
+  "basket"
+ ],
+ "put black bowl inside bottom drawer and close it": [
+  "black bowl",
+  "bottom drawer",
+  "bottom drawer",
+  null
+ ],
+ "put both moka pots on the stove": [
+  "moka pot",
+  "stove",
+  "moka pot",
+  "stove"
+ ],
+ "put both the alphabet soup and the butter in the basket": [
+  "alphabet soup",
+  "basket",
+  "butter",
+  "basket"
+ ],
+ "put both the alphabet soup and the cream cheese box in the basket": [
+  "alphabet soup",
+  "basket",
+  "cream cheese box",
+  "basket"
+ ],
+ "put both the alphabet soup and the tomato sauce in the basket": [
+  "alphabet soup",
+  "basket",
+  "tomato sauce",
+  "basket"
+ ],
+ "put both the cream cheese and the tomato sauce in the basket": [
+  "cream cheese",
+  "basket",
+  "tomato sauce",
+  "basket"
+ ],
+ "put both the cream cheese box and the butter in the basket": [
+  "cream cheese box",
+  "basket",
+  "butter",
+  "basket"
+ ],
+ "put both the ketchup and the cream cheese box in the basket": [
+  "ketchup",
+  "basket",
+  "cream cheese box",
+  "basket"
+ ],
+ "put the black bowl in the bottom drawer of the cabinet and close it": [
+  "black bowl",
+  "bottom drawer of the cabinet",
+  "bottom drawer of the cabinet",
+  null
+ ],
+ "put the bottle in the bottom drawer of the cabinet and close it": [
+  "bottle",
+  "bottom drawer",
+  "bottom drawer",
+  null
+ ],
+ "put the left moka pot on the stove": [
+  "left moka pot",
+  "stove",
+  null,
+  null
+ ],
+ "put the red mug on the plate and put the chocolate pudding to the right of the plate": [
+  "red mug",
+  "plate",
+  "chocolate pudding",
+  null
+ ],
+ "put the white mug in the microwave and close it": [
+  "white mug",
+  "microwave",
+  "microwave",
+  null
+ ],
+ "put the white mug on the left plate and put the yellow and white mug on the right plate": [
+  "white mug",
+  "left plate",
+  "yellow and white mug",
+  "right plate"
+ ],
+ "put the white mug on the plate and put the chocolate pudding to the right of the plate": [
+  "white mug",
+  "plate",
+  "chocolate pudding",
+  null
+ ],
+ "put the wine bottle in the bowl": [
+  "wine bottle",
+  "bowl",
+  null,
+  null
+ ],
+ "put the yellow and white mug in the microwave and close it": [
+  "yellow and white mug",
+  "microwave",
+  "microwave",
+  null
+ ],
+ "put the yellow and white mug on the left plate and put the white mug on the right plate": [
+  "yellow and white mug",
+  "left plate",
+  "white mug",
+  "right plate"
+ ],
+ "slide open the top drawer and place the bowl in it": [
+  "bowl",
+  "top drawer",
+  null,
+  null
+ ],
+ "switch on the stove": [
+  "stove",
+  null,
+  null,
+  null
+ ],
+ "switch stove on and put moka pot on it": [
+  "moka pot",
+  "stove",
+  "stove",
+  null
+ ],
+ "take black bowl next to ramekin and place on plate": [
+  "black bowl next to ramekin",
+  "plate",
+  null,
+  null
+ ],
+ "take the black bowl from the top drawer and put it on plate": [
+  "black bowl from the top drawer",
+  "plate",
+  null,
+  null
+ ],
+ "turn on the stove and put the moka pot on it": [
+  "moka pot",
+  "stove",
+  "stove",
+  null
+ ],
+ "turn on the stove and put the pan on it": [
+  "pan",
+  "stove",
+  "stove",
+  null
+ ]
+}

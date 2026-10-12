@@ -1,0 +1,4 @@
+LingBot-Depth: Masked Depth Modeling for Spatial Perception (the "mdm" package)
+Copyright (c) Robbyant / Ant Group. Vendored from https://github.com/robbyant/lingbot-depth
+(the RGB-D encoder / decoder WildDet3D uses as its depth backbone). Licensed under the Apache License, Version 2.0
+(see LICENSE in this directory). The dinov2_rgbd/ subpackage is derived from Meta's DINOv2 (Apache License 2.0).

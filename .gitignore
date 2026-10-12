@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pt
+*.npz
+*.npy
+*.mp4
+*.egg-info/
+.DS_Store
+runs/
+cache/

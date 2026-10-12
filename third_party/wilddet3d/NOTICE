@@ -1,0 +1,5 @@
+WildDet3D: Scaling Promptable 3D Detection in the Wild
+Copyright (c) Allen Institute for AI (Ai2). Vendored from https://github.com/allenai/WildDet3D
+(model code only; GAM adds a thin inference wrapper and uses the public and fine-tuned weights).
+Licensed under the SAM License (see LICENSE in this directory), as WildDet3D builds on SAM 3 and LingBot-Depth.
+ops/nystrom.py carries its own Facebook BSD header.

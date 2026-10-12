@@ -1,0 +1,80 @@
+# GAM on LIBERO-PRO, one model for all four suites (spatial / object / goal / 10).
+# Evaluate:   python benchmarks/libero_pro/eval.py       --config configs/libero_pro.yaml --suite object --variant language
+# Precompute: python benchmarks/libero_pro/precompute.py --config configs/libero_pro.yaml --suite object   (x4 suites)
+# Train:      python -m GAM.train --config configs/libero_pro.yaml
+# End-to-end: python benchmarks/libero_pro/track.py --config configs/libero_pro.yaml --suite object   (object tracks only, x4 suites)
+#             python -m GAM.train --config configs/libero_pro.yaml --e2e        (perception runs inside training)
+
+benchmark: libero_pro                           # selects the simulator-replay data path for --e2e
+
+paths:
+  task_files: hf://datasets/gehaozhang/gam-libero-pro-assets/   # bddl + initial states of the 16 cells (the ones in the repo are incomplete); or a local folder
+
+checkpoints:                                    # local path or hf://<user>/<repo>/<file> (downloaded on first use)
+  policy:    hf://gehaozhang/gam-libero-pro/checkpoints/gam_policy_libero_pro.pt
+  wilddet3d: hf://gehaozhang/gam-libero-pro/checkpoints/wilddet3d_libero_pro.pt
+  cotracker: hf://facebook/cotracker3/scaled_online.pth
+  cotracker_offline: hf://facebook/cotracker3/scaled_offline.pth   # precompute only: tracks a whole demonstration at once
+  span_head: hf://gehaozhang/gam-libero-pro/checkpoints/span_head_libero_pro.pt   # T5 span head: instruction -> object phrases (and the sentence embedding for lang_mode)
+
+data:
+  demos_root: ${LIBERO_DATASETS}                # LIBERO demonstrations: <demos_root>/libero_<suite>/<task>_demo.hdf5
+  slots: [pick0, place0, pick1, place1]         # up to two pick-and-place pairs per instruction -> 4 x 8 detection tokens
+  val_episodes: 0
+
+perception:                                     # must match what the policy was trained with
+  image_size: 512                               # agentview render resolution
+  patch_grid: 6                                 # 6x6 = 36 image tokens
+  grounding: text+track                         # text+track: first-frame text detection -> CoTracker;  text: text detection on every frame
+  detector_depth: sim                           # depth fed to WildDet3D (sim | zero)
+  geometry_depth: pred                          # depth used for the object point clouds (sim | pred = WildDet3D output)
+  geometry_source: box3d                        # object box = predicted 3D box (box3d) or 2D box + depth (box2d_depth)
+  box_whl_perm: [0, 1, 2]                       # axis order of the fine-tuned detector's box extents
+  precision: fp32                               # fp32 | bf16
+  deterministic: true                           # TF32 off + cudnn deterministic
+  text_slots: table                             # table: the released lookup tables below (exactly what the reported numbers used);
+                                                # span_head: run checkpoints.span_head on the instruction (any instruction, slightly different phrases)
+  span_cache: repo://benchmarks/libero_pro/assets/span_cache.json    # instruction -> object phrases      (table)
+  lang_slots: repo://benchmarks/libero_pro/assets/lang_slots.json    # instruction -> [pick0, place0, pick1, place1]  (table)
+  click_shift:                                  # move the tracker's start point off the box centre for two tasks
+    px: [8, 0]
+    slots: [0, 2]
+    tasks: [object/language/3, object/object/3]
+
+train:
+  cache_dir: ${GAM_CACHE:-./cache}/libero_pro   # written by benchmarks/libero_pro/precompute.py, or hf://gehaozhang/gam-libero-pro/cache/ (the released cache)
+  cache_glob: "*/*.npz"
+  tracks_dir: ${GAM_CACHE:-./cache}/libero_pro_tracks   # written by benchmarks/libero_pro/track.py; read by --e2e
+  out_dir: ${GAM_RUNS:-./runs}/libero_pro
+  horizon: 16                                   # action chunk (OSC_POSE deltas)
+  n_action_steps: 16
+  state_hist: 2
+  pcd_ref: ee                                   # object geometry expressed relative to the end effector
+  batch_size: 64                                # per GPU; the released policy: 8 GPUs x 64 = global batch 512
+  grad_accum: 1                                 # micro-batches per optimiser step: set 8 on one GPU (or 2 on four) to keep global batch 512
+  lr: 2.0e-4
+  weight_decay: 1.0e-3
+  warmup_steps: 1000
+  max_steps: 19800                              # ~30 epochs over the 40 tasks x 50 demos (the cosine schedule spans all 19800 steps)
+  # The released policy is step_6600.pt of this run (save_every 3300 x snapshot_every_saves 1 keeps it); training to 19800 gives the final model, not the released one.
+  save_every: 3300
+  snapshot_every_saves: 1
+  state_dropout: 0.2
+  patch_dropout: 0.3
+  det_xyz_dropout: 0.0
+  lang_mode: none                               # none: no language input to the policy (released model)
+                                                # film: T5 sentence embedding (checkpoints.span_head) modulates every layer's adaLN (paper eq. 2)
+  seed: 7
+
+eval:
+  task_list: all                                # run_all.py / score.py: all 160 (suite, variant, task) units
+  episodes_per_task: 50
+  max_steps: 300                                # libero_10 uses its official budget of 520
+  chunking: tempens                             # how successive action chunks are combined: tempens | rtc
+  tempens:                                      # temporal ensembling: re-plan every step, average the overlapping
+    k: 0.01                                     #   predictions for the current step with weights exp(-k * age)
+  rtc:                                          # real-time chunking: execute part of a chunk, then re-plan with the
+    exec_steps: 8                               #   unexecuted remainder as a soft constraint on the new chunk
+    delay: 1                                    #   leading actions treated as already committed (inference latency, in steps)
+  save_video: true
+  out_dir: ${GAM_RUNS:-./runs}/libero_pro
