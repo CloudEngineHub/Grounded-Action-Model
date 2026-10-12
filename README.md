@@ -37,7 +37,8 @@ action chunks from those grounded observations, the robot's own silhouette and i
 ### Key Features
 
 - **Grounded, object-centric input.** Every object slot is a 3D box + point cloud + masked image tokens from a
-  frozen open-vocabulary 3D detector; the policy is conditioned on *where things are*, not on pixels.
+  frozen open-vocabulary 3D detector; the policy is conditioned on each object's geometry and local appearance rather
+  than on the whole image.
 - **Any prompt.** Slots come from object names (text prompts on every frame) or from points tracked through the
   episode (a first-frame detection, or any point source you provide).
 - **Three ways to train.** Precompute a feature cache and train fast, train from the released caches, or train
