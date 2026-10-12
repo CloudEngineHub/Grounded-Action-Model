@@ -28,8 +28,8 @@ ftfy
 iopath
 pycocotools
 huggingface_hub
-pyarrow                  # LeRobot datasets (parquet)
-pandas
+pyarrow<21               # LeRobot datasets (parquet); 21+ needs numpy 2
+pandas<3
 vis4d==1.0.0             # detector heads used by wilddet3d
 open_clip_torch==3.3.0
 decord==0.6.0

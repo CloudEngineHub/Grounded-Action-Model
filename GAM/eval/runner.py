@@ -78,7 +78,8 @@ class GAMRunner:
                 self.head = T5ObjectSegmenter.from_checkpoint(fetch(self.cfg["checkpoints"]["span_head"]))
             names = manipulation_objects(instruction, self.head.extract(instruction))[:len(self.slots)]
             self.prompts = names + [None] * (len(self.slots) - len(names))
-            print(f"[runner] {instruction!r} -> prompts {names}", flush=True)
+            if instruction:
+                print(f"[runner] {instruction!r} -> prompts {names}", flush=True)
         self.tracker = None; self.tk_slots = []; self.last_pts = {}   # text+track state of the episode
         self.lang = None
         if getattr(self.policy, "lang_film", False):
