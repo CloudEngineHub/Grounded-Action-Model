@@ -186,6 +186,9 @@ def main():
             _ts = set(t["tasks"]); all_names = [n for n in all_names if n.split("/")[0] in _ts]
             assert all_names, "train.tasks matched nothing"
         n_val = int(cfg["data"].get("val_episodes", 0))
+        if n_val >= len(all_names):                                 # a smoke run with fewer episodes than data.val_episodes
+            n_val = max(len(all_names) - 1, 0)
+            print(f"[train] WARNING only {len(all_names)} cached episodes: holding out {n_val} for validation instead of data.val_episodes", flush=True)
         train_names = all_names[:-n_val] if n_val else all_names
         ds = CacheDataset(t["cache_dir"], train_names, horizon=int(t["horizon"]), n_slots=S,
                           state_hist=int(t["state_hist"]), action_mode=t.get("action_mode", "abs"),

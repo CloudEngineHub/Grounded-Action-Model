@@ -31,7 +31,7 @@ python -c "import GAM, sam3, wilddet3d, mdm; from GAM.model.policy import GAMPol
 
 if [ -n "$LIBERO_PRO" ]; then
   echo "== LIBERO-PRO ($LIBERO_PRO)"
-  python -m pip install "robosuite==1.4.0" "bddl==1.0.1" "gym==0.25.2" "mujoco" "easydict" "hydra-core" "thop" "cloudpickle" "future"
+  python -m pip install "robosuite==1.4.0" "bddl==1.0.1" "gym==0.25.2" "mujoco==3.2.3" "PyOpenGL-accelerate" "easydict" "hydra-core" "thop" "cloudpickle" "future"   # mujoco 3.3+ breaks robosuite 1.4
   python -m pip install -e "$LIBERO_PRO" --no-deps
   python -c "import libero, robosuite; print('LIBERO-PRO ok')"
   echo "   set LIBERO_DATASETS=<LIBERO demos root> for precompute"
