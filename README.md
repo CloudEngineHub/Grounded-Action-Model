@@ -1,5 +1,5 @@
 <h1 align="center">Grounded Action Model:<br>3D Grounding as a Foundation for Robotics</h1>
-
+ 
 <p align="center">
   <a href="https://arxiv.org/abs/2609.23863"><img src="https://img.shields.io/badge/arXiv-2609.23863-b31b1b.svg" alt="arXiv"></a>
   <a href="https://grounded-action-model.github.io/"><img src="https://img.shields.io/badge/Project%20Page-grounded--action--model.github.io-F0369B.svg" alt="Project page"></a>
